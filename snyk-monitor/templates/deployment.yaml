@@ -44,11 +44,11 @@ spec:
               - matchExpressions:
                 - key: "kubernetes.io/arch"
                   operator: In
-                  values: ["amd64"]
+                  values: ["arm64"]
                 {{- if not .Values.nodeAffinity.disableBetaArchNodeSelector }}
                 - key: "beta.kubernetes.io/arch"
                   operator: In
-                  values: ["amd64"]
+                  values: ["arm64"]
                 {{- end }}
       serviceAccountName: {{ include "snyk-monitor.name" . }}
       restartPolicy: Always
